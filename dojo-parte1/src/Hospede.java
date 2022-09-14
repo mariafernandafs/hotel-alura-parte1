@@ -8,12 +8,6 @@ public class Hospede {
 	private String nacionalidade;
 	private String telefone;
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
 	public Hospede(Integer id, String nome, String sobrenome, Date data_nascimento, String nacionalidade,
 			String telefone) {
 		super();
@@ -35,6 +29,12 @@ public class Hospede {
 		this.telefone = telefone;
 	}
 	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}	
 	public String getNome() {
 		return nome;
 	}
@@ -65,6 +65,11 @@ public class Hospede {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+	@Override
+	public String toString() {
+		return "Hospede [id=" + id + ", nome=" + nome + ", sobrenome=" + sobrenome + ", data_nascimento="
+				+ data_nascimento + ", nacionalidade=" + nacionalidade + ", telefone=" + telefone + "]";
+	}	
 
 }
 

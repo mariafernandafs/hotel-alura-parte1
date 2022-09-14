@@ -23,6 +23,7 @@ public class Reserva {
 		this.valor = valor;
 		this.forma_pagamento = forma_pagamento;
 	}
+	
 	public Integer getId() {
 		return id;
 	}
@@ -53,6 +54,12 @@ public class Reserva {
 	public void setForma_pagamento(String forma_pagamento) {
 		this.forma_pagamento = forma_pagamento;
 	}
+
+	@Override
+	public String toString() {
+		return "Reserva [id=" + id + ", data_entrada=" + data_entrada + ", data_saida=" + data_saida + ", valor="
+				+ valor + ", forma_pagamento=" + forma_pagamento + "]";
+	}	
 }
 
 

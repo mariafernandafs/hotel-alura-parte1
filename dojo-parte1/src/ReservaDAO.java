@@ -14,7 +14,7 @@ public class ReservaDAO {
 	}
 	
 	public void salvarReserva(Reserva reserva) throws SQLException {
-		String sql = "INSERT INTO RESERVA (data_entrada, data_saida, valor, forma_pagamento) VALUES(?, ?, ?, ?)";
+		String sql = "INSERT INTO reserva (data_entrada, data_saida, valor, forma_pagamento) VALUES(?, ?, ?, ?)";
 				
 		try(PreparedStatement pst = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
 			pst.setDate(1, reserva.getData_entrada());

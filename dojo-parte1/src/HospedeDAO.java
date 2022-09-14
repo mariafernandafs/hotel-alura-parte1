@@ -13,7 +13,7 @@ public class HospedeDAO {
 	}
 	
 	public void salvarHospede(Hospede hospede) throws SQLException {
--		String sql = "INSERT INTO HOSPEDE (nome, sobrenome, data_nascimento, nacionalidade, telefone, id_reserva) VALUES(?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO hospede (nome, sobrenome, data_nascimento, nacionalidade, telefone) VALUES(?, ?, ?, ?, ?)";
 				
 		try(PreparedStatement pst = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
 			pst.setString(1, hospede.getNome());
@@ -21,7 +21,6 @@ public class HospedeDAO {
 			pst.setDate(3, hospede.getData_nascimento());
 			pst.setString(4, hospede.getNacionalidade());
 			pst.setString(5, hospede.getTelefone());
-			pst.setInt(6, hospede.getId());
 			
 			pst.execute();
 			
@@ -29,10 +28,8 @@ public class HospedeDAO {
 				while(rst.next()) {
 					hospede.setId(rst.getInt(1));
 					
-				}
-				
-			}
-			
+				}			
+			}			
 		}
 	}
 }
